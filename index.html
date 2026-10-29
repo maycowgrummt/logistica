@@ -390,11 +390,28 @@
                             <label class="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Selecionar Planilha WMS (.xlsx ou .csv)</label>
                             <input type="file" id="inputArquivoWMS" accept=".xlsx, .xls, .csv" class="w-full border border-slate-300 dark:border-slate-700 rounded-lg p-2 text-xs bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-200 cursor-pointer">
                         </div>
-                        <div class="flex items-end pt-5 md:pt-0">
-                            <button type="button" onclick="importarPlanilhaWMS()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center space-x-2 shadow-md">
-                                <i data-lucide="upload-cloud" class="w-4 h-4"></i>
-                                <span>Importar & Filtrar WMS</span>
-                            </button>
+                        <div class="flex flex-col gap-2 pt-5 md:pt-0">
+
+                        <button
+                            type="button"
+                            onclick="importarPlanilhaWMS()"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center space-x-2 shadow-md">
+
+                            <i data-lucide="upload-cloud" class="w-4 h-4"></i>
+                            <span>Importar & Filtrar WMS</span>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="limparRotasWMS()"
+                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center space-x-2 shadow-md">
+
+                            <span>🗑 Limpar Rotas WMS</span>
+
+                        </button>
+
+                    </div>
                         </div>
                     </div>
                 </div>
@@ -1027,7 +1044,7 @@
     </main>
 
     <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto py-4 text-center text-xs text-slate-500 dark:text-slate-400">
-        DARNEL PACKAGING &bull; LOGÍSTICA ARAUCÁRIA PR &bull; Esteira Integrada & Gestão em Nuvem
+        DARNEL PACKAGING &bull; LOGÍSTICA ARAUCÁRIA PR &bull; Desenvolvido por: Maycow Grummt
     </footer>
 
     <!-- Scripts da aplicação -->
@@ -1208,6 +1225,8 @@
             renderizarTabelasComercial();
             renderizarTabelasTracking();
             renderizarCalendario();
+
+            gerarResumoRegioes();
         }
 
         function inicializarMapa() {
@@ -1234,6 +1253,7 @@
             setTimeout(() => inicializarMapa(), 300);
             inicializarFirebase();
             atualizarInterfaceGeral();
+            mudarSubTab('dedicada');
 
             document.addEventListener('click', (e) => {
                 const drop = document.getElementById('dropdownBuscaGlobal');
@@ -1963,6 +1983,7 @@
         <script src="js/alertas.js"></script>
         <script src="js/busca.js"></script>
 
+        <script src="js/coordenadas.js"></script>
         <script src="js/planejamento.js"></script>
         <script src="js/faturamento.js"></script>
         <script src="js/comercial.js"></script>
