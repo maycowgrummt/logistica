@@ -842,7 +842,7 @@ function importarPlanilhaWMS() {
     reader.readAsArrayBuffer(arquivo);
 }
 
-        function mudarSubTab(sub) {
+    function mudarSubTab(sub) {
     subTabAtiva = sub;
 
     const subDed = document.getElementById('subsecao-dedicada');
@@ -1077,6 +1077,12 @@ function mostrarRotaNoMapa(regiao) {
             .trim()
             .toUpperCase();
     };
+
+    const normalizarUF = function(estado) {
+    return String(estado || '')
+        .trim()
+        .toUpperCase();
+};
 
     const cidadesUnicas = new Map();
 

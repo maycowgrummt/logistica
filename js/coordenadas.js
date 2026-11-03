@@ -1,4 +1,3 @@
-
 /*
 =========================================
 MÓDULO COORDENADAS
@@ -7,15 +6,15 @@ MÓDULO COORDENADAS
 Coordenadas geográficas das cidades
 utilizadas pela roteirização.
 
+Padrão:
+- Nomes em maiúsculas e sem acentos.
+- Cidades ambíguas identificadas por CIDADE|UF.
 =========================================
 */
 
 const COORDENADAS_CIDADES = {
 
-    // =====================================
     // PARANÁ - REGIÃO METROPOLITANA
-    // =====================================
-
     "CURITIBA": {lat:-25.4284,lng:-49.2733},
     "ARAUCARIA": {lat:-25.5854,lng:-49.4044},
     "PINHAIS": {lat:-25.4442,lng:-49.1927},
@@ -35,10 +34,7 @@ const COORDENADAS_CIDADES = {
     "ITAPERUCU": {lat:-25.2200,lng:-49.3470},
     "LAPA": {lat:-25.7697,lng:-49.7158},
 
-    // =====================================
     // PARANÁ - LITORAL
-    // =====================================
-
     "PARANAGUA": {lat:-25.5163,lng:-48.5225},
     "GUARATUBA": {lat:-25.8752,lng:-48.5757},
     "MATINHOS": {lat:-25.8177,lng:-48.5424},
@@ -46,10 +42,7 @@ const COORDENADAS_CIDADES = {
     "MORRETES": {lat:-25.4765,lng:-48.8342},
     "ANTONINA": {lat:-25.4333,lng:-48.7119},
 
-    // =====================================
     // PARANÁ - NORTE E NOROESTE
-    // =====================================
-
     "LONDRINA": {lat:-23.3103,lng:-51.1628},
     "MARINGA": {lat:-23.4205,lng:-51.9331},
     "CAMBE": {lat:-23.2768,lng:-51.2791},
@@ -69,12 +62,13 @@ const COORDENADAS_CIDADES = {
     "LOANDA": {lat:-22.9230,lng:-53.1370},
     "ASTORGA": {lat:-23.2320,lng:-51.6650},
     "MANDAGUARI": {lat:-23.5470,lng:-51.6700},
-    "PALMAS": {lat:-26.4840,lng:-51.9900},
 
-    // =====================================
+    // PALMAS - CHAVE COM UF PARA EVITAR CONFLITO
+    "PALMAS|PR": {lat:-26.4840,lng:-51.9900},
+    "PALMAS|TO": {lat:-10.1840,lng:-48.3336},
+    "PALMAS": {lat:-10.1840,lng:-48.3336},
+
     // PARANÁ - OESTE
-    // =====================================
-
     "CASCAVEL": {lat:-24.9555,lng:-53.4552},
     "TOLEDO": {lat:-24.7246,lng:-53.7417},
     "FOZ DO IGUACU": {lat:-25.5478,lng:-54.5882},
@@ -88,10 +82,7 @@ const COORDENADAS_CIDADES = {
     "SANTA TEREZA DO OESTE": {lat:-25.0540,lng:-53.6280},
     "CORBELIA": {lat:-24.7980,lng:-53.3060},
 
-    // =====================================
     // SANTA CATARINA
-    // =====================================
-
     "JOINVILLE": {lat:-26.3044,lng:-48.8487},
     "JARAGUA DO SUL": {lat:-26.4851,lng:-49.0665},
     "BLUMENAU": {lat:-26.9194,lng:-49.0661},
@@ -123,10 +114,7 @@ const COORDENADAS_CIDADES = {
     "LAGUNA": {lat:-28.4840,lng:-48.7800},
     "PORTO UNIAO": {lat:-26.2380,lng:-51.0780},
 
-    // =====================================
     // RIO GRANDE DO SUL
-    // =====================================
-
     "PORTO ALEGRE": {lat:-30.0346,lng:-51.2177},
     "CAXIAS DO SUL": {lat:-29.1678,lng:-51.1794},
     "NOVO HAMBURGO": {lat:-29.6783,lng:-51.1305},
@@ -146,10 +134,7 @@ const COORDENADAS_CIDADES = {
     "GUAIBA": {lat:-30.1130,lng:-51.3250},
     "BAGE": {lat:-31.3314,lng:-54.1069},
 
-    // =====================================
     // SÃO PAULO - CAPITAL E GRANDE SP
-    // =====================================
-
     "SAO PAULO": {lat:-23.5505,lng:-46.6333},
     "OSASCO": {lat:-23.5329,lng:-46.7916},
     "BARUERI": {lat:-23.5057,lng:-46.8790},
@@ -173,10 +158,7 @@ const COORDENADAS_CIDADES = {
     "POA": {lat:-23.5280,lng:-46.3450},
     "FERRAZ DE VASCONCELOS": {lat:-23.5410,lng:-46.3680},
 
-    // =====================================
     // SÃO PAULO - INTERIOR E LITORAL
-    // =====================================
-
     "CAMPINAS": {lat:-22.9099,lng:-47.0626},
     "JUNDIAI": {lat:-23.1857,lng:-46.8978},
     "LIMEIRA": {lat:-22.5654,lng:-47.4018},
@@ -232,10 +214,7 @@ const COORDENADAS_CIDADES = {
     "PENAPOLIS": {lat:-21.4197,lng:-50.0775},
     "TUPA": {lat:-21.9347,lng:-50.5136},
 
-    // =====================================
     // MINAS GERAIS
-    // =====================================
-
     "BELO HORIZONTE": {lat:-19.9167,lng:-43.9345},
     "CONTAGEM": {lat:-19.9321,lng:-44.0539},
     "BETIM": {lat:-19.9681,lng:-44.1983},
@@ -270,10 +249,7 @@ const COORDENADAS_CIDADES = {
     "MURIAE": {lat:-21.1300,lng:-42.3660},
     "UNAI": {lat:-16.3590,lng:-46.9060},
 
-    // =====================================
     // RIO DE JANEIRO
-    // =====================================
-
     "RIO DE JANEIRO": {lat:-22.9068,lng:-43.1729},
     "NITEROI": {lat:-22.8832,lng:-43.1034},
     "DUQUE DE CAXIAS": {lat:-22.7858,lng:-43.3049},
@@ -297,10 +273,7 @@ const COORDENADAS_CIDADES = {
     "ITAPERUNA": {lat:-21.2050,lng:-41.8870},
     "ITABORAI": {lat:-22.7440,lng:-42.8590},
 
-    // =====================================
     // ESPÍRITO SANTO
-    // =====================================
-
     "VITORIA": {lat:-20.3155,lng:-40.3128},
     "VILA VELHA": {lat:-20.3297,lng:-40.2925},
     "SERRA": {lat:-20.1289,lng:-40.3070},
@@ -318,11 +291,9 @@ const COORDENADAS_CIDADES = {
     "ALEGRE": {lat:-20.7630,lng:-41.5330},
     "MARATAIZES": {lat:-21.0430,lng:-40.8240},
     "VENDA NOVA DO IMIGRANTE": {lat:-20.3270,lng:-41.1350},
+    "CASTELO": {lat:-20.6030,lng:-41.2040},
 
-    // =====================================
     // GOIÁS
-    // =====================================
-
     "GOIANIA": {lat:-16.6869,lng:-49.2648},
     "ANAPOLIS": {lat:-16.3286,lng:-48.9534},
     "JATAI": {lat:-17.8810,lng:-51.7149},
@@ -350,10 +321,7 @@ const COORDENADAS_CIDADES = {
     "GOIATUBA": {lat:-18.0120,lng:-49.3540},
     "PALMEIRAS DE GOIAS": {lat:-16.8050,lng:-49.9250},
 
-    // =====================================
     // MATO GROSSO
-    // =====================================
-
     "CUIABA": {lat:-15.6010,lng:-56.0974},
     "VARZEA GRANDE": {lat:-15.6467,lng:-56.1325},
     "RONDONOPOLIS": {lat:-16.4708,lng:-54.6356},
@@ -382,10 +350,7 @@ const COORDENADAS_CIDADES = {
     "BARRA DO BUGRES": {lat:-15.0720,lng:-57.1820},
     "VILA RICA": {lat:-10.0130,lng:-51.1180},
 
-    // =====================================
     // MATO GROSSO DO SUL
-    // =====================================
-
     "CAMPO GRANDE": {lat:-20.4697,lng:-54.6201},
     "DOURADOS": {lat:-22.2208,lng:-54.8056},
     "TRES LAGOAS": {lat:-20.7849,lng:-51.7007},
@@ -400,21 +365,16 @@ const COORDENADAS_CIDADES = {
     "PARANAIBA": {lat:-19.6770,lng:-51.1900},
     "CHAPADAO DO SUL": {lat:-18.7880,lng:-52.6260},
     "BONITO": {lat:-21.1260,lng:-56.4830},
+    "CAARAPO": {lat:-22.6340,lng:-54.8220},
 
-    // =====================================
     // DISTRITO FEDERAL
-    // =====================================
-
     "BRASILIA": {lat:-15.7939,lng:-47.8828},
     "TAGUATINGA": {lat:-15.8360,lng:-48.0560},
     "CEILANDIA": {lat:-15.8170,lng:-48.1080},
     "GAMA": {lat:-16.0180,lng:-48.0670},
     "SOBRADINHO": {lat:-15.6500,lng:-47.7920},
 
-    // =====================================
     // BAHIA
-    // =====================================
-
     "SALVADOR": {lat:-12.9777,lng:-38.5016},
     "FEIRA DE SANTANA": {lat:-12.2664,lng:-38.9663},
     "VITORIA DA CONQUISTA": {lat:-14.8619,lng:-40.8444},
@@ -426,19 +386,12 @@ const COORDENADAS_CIDADES = {
     "PORTO SEGURO": {lat:-16.4435,lng:-39.0643},
     "EUNAPOLIS": {lat:-16.3717,lng:-39.5803},
 
-    // =====================================
     // TOCANTINS
-    // =====================================
-
-    "PALMAS": {lat:-10.1840,lng:-48.3336},
     "ARAGUAINA": {lat:-7.1920,lng:-48.2040},
     "GURUPI": {lat:-11.7280,lng:-49.0680},
     "PORTO NACIONAL": {lat:-10.7080,lng:-48.4170},
 
-    // =====================================
     // PARÁ
-    // =====================================
-
     "BELEM": {lat:-1.4558,lng:-48.5039},
     "ANANINDEUA": {lat:-1.3656,lng:-48.3722},
     "MARABA": {lat:-5.3686,lng:-49.1178},
@@ -446,100 +399,61 @@ const COORDENADAS_CIDADES = {
     "PARAUAPEBAS": {lat:-6.0678,lng:-49.9037},
     "REDENCAO": {lat:-8.0253,lng:-50.0317},
 
-    // =====================================
     // AMAZONAS
-    // =====================================
-
     "MANAUS": {lat:-3.1190,lng:-60.0217},
     "ITACOATIARA": {lat:-3.1430,lng:-58.4440},
     "PARINTINS": {lat:-2.6280,lng:-56.7350},
 
-    // =====================================
     // MARANHÃO
-    // =====================================
-
     "SAO LUIS": {lat:-2.5307,lng:-44.3068},
     "IMPERATRIZ": {lat:-5.5264,lng:-47.4797},
     "BALSAS": {lat:-7.5320,lng:-46.0370},
 
-    // =====================================
     // PIAUÍ
-    // =====================================
-
     "TERESINA": {lat:-5.0919,lng:-42.8034},
     "PARNAIBA": {lat:-2.9050,lng:-41.7760},
 
-    // =====================================
     // CEARÁ
-    // =====================================
-
     "FORTALEZA": {lat:-3.7319,lng:-38.5267},
     "JUAZEIRO DO NORTE": {lat:-7.2130,lng:-39.3150},
     "SOBRAL": {lat:-3.6880,lng:-40.3490},
     "MARACANAU": {lat:-3.8760,lng:-38.6250},
 
-    // =====================================
     // RIO GRANDE DO NORTE
-    // =====================================
-
     "NATAL": {lat:-5.7793,lng:-35.2009},
     "MOSSORO": {lat:-5.1870,lng:-37.3440},
 
-    // =====================================
     // PARAÍBA
-    // =====================================
-
     "JOAO PESSOA": {lat:-7.1195,lng:-34.8450},
     "CAMPINA GRANDE": {lat:-7.2306,lng:-35.8811},
 
-    // =====================================
     // PERNAMBUCO
-    // =====================================
-
     "RECIFE": {lat:-8.0476,lng:-34.8770},
     "CARUARU": {lat:-8.2830,lng:-35.9760},
     "PETROLINA": {lat:-9.3891,lng:-40.5030},
     "GARANHUNS": {lat:-8.8900,lng:-36.4960},
 
-    // =====================================
     // ALAGOAS
-    // =====================================
-
     "MACEIO": {lat:-9.6498,lng:-35.7089},
     "ARAPIRACA": {lat:-9.7520,lng:-36.6610},
 
-    // =====================================
     // SERGIPE
-    // =====================================
-
     "ARACAJU": {lat:-10.9472,lng:-37.0731},
     "ITABAIANA": {lat:-10.6850,lng:-37.4250},
 
-    // =====================================
     // ACRE
-    // =====================================
-
     "RIO BRANCO": {lat:-9.9754,lng:-67.8249},
 
-    // =====================================
     // RONDÔNIA
-    // =====================================
-
     "PORTO VELHO": {lat:-8.7612,lng:-63.9004},
     "JI PARANA": {lat:-10.8853,lng:-61.9517},
     "ARIQUEMES": {lat:-9.9057,lng:-63.0325},
     "VILHENA": {lat:-12.7400,lng:-60.1450},
 
-    // =====================================
     // RORAIMA
-    // =====================================
-
     "BOA VISTA": {lat:2.8235,lng:-60.6758},
 
-    // =====================================
     // AMAPÁ
-    // =====================================
-
     "MACAPA": {lat:0.0349,lng:-51.0694}
 
 };

@@ -9,6 +9,11 @@ Responsável por:
 - Agrupar pedidos WMS
 - Auxiliar na roteirização
 
+Padrão:
+- Nomes em maiúsculas
+- Sem acentos
+- Sem duplicidades intencionais
+
 =========================================
 */
 
@@ -19,6 +24,7 @@ const REGIOES_LOGISTICAS = {
         "EXTERIOR"
     ],
 
+    // PARANÁ
     RMC: [
         "CURITIBA",
         "ARAUCARIA",
@@ -58,7 +64,8 @@ const REGIOES_LOGISTICAS = {
         "JAGUARIAIVA",
         "ORTIGUEIRA",
         "GUARAPUAVA",
-        "CARAMBEI"
+        "CARAMBEI",
+        "PRUDENTOPOLIS"
     ],
 
     NORTE_PR: [
@@ -76,7 +83,6 @@ const REGIOES_LOGISTICAS = {
         "SANTO INACIO",
         "MANDAGUACU",
         "PAICANDU",
-        "PRUDENTOPOLIS",
         "CPA",
         "COLORADO",
         "PARAISO DO NORTE",
@@ -101,14 +107,15 @@ const REGIOES_LOGISTICAS = {
         "MISSAL",
         "CAFELANDIA",
         "UBIRATA",
-        "CAARAPO",
         "SANTO ANTONIO DO SUDOESTE",
         "DOIS VIZINHOS",
         "PATO BRANCO",
-        "CAPINZAL",
-        "JOACABA"
+        "FRANCISCO BELTRAO",
+        "UMUARAMA",
+        "ITAPEJARA D OESTE"
     ],
 
+    // SANTA CATARINA
     SC_NORTE: [
         "JOINVILLE",
         "JARAGUA DO SUL",
@@ -123,7 +130,11 @@ const REGIOES_LOGISTICAS = {
         "XANXERE",
         "CONCORDIA",
         "CURITIBANOS",
-        "LAGES"
+        "LAGES",
+        "CAPINZAL",
+        "JOACABA",
+        "SAO FRANCISCO DO SUL",
+        "PORTO UNIAO"
     ],
 
     SC_LITORAL: [
@@ -139,10 +150,8 @@ const REGIOES_LOGISTICAS = {
         "BIGUACU",
         "PENHA",
         "BALNEARIO PICARRAS",
-        "SAO FRANCISCO DO SUL",
         "ANITAPOLIS",
-        "GOVERNADOR CELSO RAMOS",
-        "NOVA VENEZA"
+        "GOVERNADOR CELSO RAMOS"
     ],
 
     SC_SUL: [
@@ -151,9 +160,12 @@ const REGIOES_LOGISTICAS = {
         "ARARANGUA",
         "ICARA",
         "LAGUNA",
-        "RIO DO SUL"
+        "RIO DO SUL",
+        "IMBITUBA",
+        "NOVA VENEZA"
     ],
 
+    // SÃO PAULO
     SP_CAPITAL: [
         "SAO PAULO",
         "OSASCO",
@@ -173,13 +185,13 @@ const REGIOES_LOGISTICAS = {
         "ITAQUAQUECETUBA",
         "SANTANA DE PARNAIBA",
         "ITAPEVI",
-        "EMBU",
+        "EMBU DAS ARTES",
         "ITAPECERICA DA SERRA",
-        "BIRITIBA-MIRIM",
+        "BIRITIBA MIRIM",
         "COTIA",
-        "VARZEA PAULISTA",
         "JANDIRA",
-        "MAIRINQUE"
+        "FERRAZ DE VASCONCELOS",
+        "POA"
     ],
 
     SP_INTERIOR: [
@@ -208,7 +220,6 @@ const REGIOES_LOGISTICAS = {
         "CAPIVARI",
         "MIRANDOPOLIS",
         "SALTO DE PIRAPORA",
-        "ITUPEVA",
         "ITUPEVA",
         "SERTAOZINHO",
         "ITAPETININGA",
@@ -248,20 +259,19 @@ const REGIOES_LOGISTICAS = {
         "ARARAS",
         "ELDORADO",
         "SANTA FE DO SUL",
-        "ITAPEJARA D OESTE",
         "JOSE BONIFACIO",
         "ADAMANTINA",
         "DRACENA",
         "SAO JOSE DO RIO PRETO",
-        "UMUARAMA",
-        "PATO BRANCO",
         "BURITAMA",
-        "PIRATINIGUINA",
         "PIRATININGA",
         "ARACOIABA DA SERRA",
-        "BARRETOS"
+        "BARRETOS",
+        "VARZEA PAULISTA",
+        "MAIRINQUE"
     ],
 
+    // RIO GRANDE DO SUL
     RS: [
         "PORTO ALEGRE",
         "CAXIAS DO SUL",
@@ -311,9 +321,10 @@ const REGIOES_LOGISTICAS = {
         "AUREA",
         "TRES FORQUILHAS",
         "SAO FRANCISCO DE ASSIS",
-        "SANT ANA DO LIVRAMENTO"
+        "SANTANA DO LIVRAMENTO"
     ],
 
+    // MINAS GERAIS
     MG: [
         "BELO HORIZONTE",
         "CONTAGEM",
@@ -329,7 +340,6 @@ const REGIOES_LOGISTICAS = {
         "SETE LAGOAS",
         "SANTA LUZIA",
         "RIBEIRAO DAS NEVES",
-        "CASTELO",
         "BORDA DA MATA",
         "CAMBUI",
         "BOM REPOUSO",
@@ -337,6 +347,7 @@ const REGIOES_LOGISTICAS = {
         "ARCEBURGO"
     ],
 
+    // RIO DE JANEIRO
     RJ: [
         "RIO DE JANEIRO",
         "SAO GONCALO",
@@ -347,13 +358,14 @@ const REGIOES_LOGISTICAS = {
         "CAMPOS DOS GOYTACAZES",
         "VOLTA REDONDA",
         "PETROPOLIS",
-        "MACAEE",
+        "MACAE",
         "ANGRA DOS REIS",
         "BARRA MANSA",
         "SANTO ANTONIO DE PADUA",
         "NOVA FRIBURGO"
     ],
 
+    // ESPÍRITO SANTO
     ES: [
         "VITORIA",
         "VILA VELHA",
@@ -363,9 +375,11 @@ const REGIOES_LOGISTICAS = {
         "CACHOEIRO DE ITAPEMIRIM",
         "LINHARES",
         "COLATINA",
-        "SAO MATEUS"
+        "SAO MATEUS",
+        "CASTELO"
     ],
 
+    // GOIÁS
     GO: [
         "GOIANIA",
         "APARECIDA DE GOIANIA",
@@ -389,6 +403,7 @@ const REGIOES_LOGISTICAS = {
         "PIRES DO RIO"
     ],
 
+    // MATO GROSSO
     MT: [
         "CUIABA",
         "VARZEA GRANDE",
@@ -403,17 +418,20 @@ const REGIOES_LOGISTICAS = {
         "JUARA"
     ],
 
+    // MATO GROSSO DO SUL
     MS: [
         "CAMPO GRANDE",
         "DOURADOS",
         "TRES LAGOAS",
         "CORUMBA",
-        "PONTAPORA",
+        "PONTA PORA",
         "NAVIRAI",
         "NOVA ANDRADINA",
-        "SIDROLANDIA"
+        "SIDROLANDIA",
+        "CAARAPO"
     ],
 
+    // BAHIA
     BA: [
         "SALVADOR",
         "FEIRA DE SANTANA",
@@ -429,6 +447,7 @@ const REGIOES_LOGISTICAS = {
         "PORTO SEGURO"
     ],
 
+    // PERNAMBUCO
     PE: [
         "RECIFE",
         "JABOATAO DOS GUARARAPES",
@@ -443,6 +462,7 @@ const REGIOES_LOGISTICAS = {
         "SAO BENTO DO UNA"
     ],
 
+    // CEARÁ
     CE: [
         "FORTALEZA",
         "CAUCAIA",
@@ -457,6 +477,7 @@ const REGIOES_LOGISTICAS = {
         "TIANGUA"
     ],
 
+    // PARÁ
     PA: [
         "BELEM",
         "ANANINDEUA",
@@ -466,22 +487,31 @@ const REGIOES_LOGISTICAS = {
         "CASTANHAL",
         "ABAETETUBA",
         "CAMETA",
-        "MARITUBA",
-        "ARAGUAINA"
+        "MARITUBA"
     ],
 
+    // AMAZONAS
     AM: [
         "MANAUS",
         "PARINTINS",
         "ITACOATIARA",
         "MANACAPURU",
         "COARI",
-        "TEFEE"
+        "TEFE"
     ],
 
+    // TOCANTINS
+    TO: [
+        "PALMAS",
+        "ARAGUAINA",
+        "GURUPI",
+        "PORTO NACIONAL"
+    ],
+
+    // RONDÔNIA
     RO: [
         "PORTO VELHO",
-        "JI-PARANA",
+        "JI PARANA",
         "ARIQUEMES",
         "VILHENA",
         "CACOAL",
@@ -489,6 +519,7 @@ const REGIOES_LOGISTICAS = {
         "CEREJEIRAS"
     ],
 
+    // ACRE
     AC: [
         "RIO BRANCO",
         "CRUZEIRO DO SUL",
@@ -496,6 +527,7 @@ const REGIOES_LOGISTICAS = {
         "TARAUACA"
     ],
 
+    // ALAGOAS
     AL: [
         "MACEIO",
         "ARAPIRACA",
@@ -505,6 +537,7 @@ const REGIOES_LOGISTICAS = {
         "UNIAO DOS PALMARES"
     ],
 
+    // PARAÍBA
     PB: [
         "JOAO PESSOA",
         "CAMPINA GRANDE",
@@ -515,25 +548,28 @@ const REGIOES_LOGISTICAS = {
         "CAJAZEIRAS"
     ],
 
+    // RIO GRANDE DO NORTE
     RN: [
         "NATAL",
         "MOSSORO",
         "PARNAMIRIM",
         "SAO GONCALO DO AMARANTE",
         "MACAIBA",
-        "CEARA-MIRIM",
+        "CEARA MIRIM",
         "CAICO"
     ],
 
+    // PIAUÍ
     PI: [
         "TERESINA",
         "PARNAIBA",
         "PICOS",
         "FLORIANO",
-        "CAMPO MAYOR",
+        "CAMPO MAIOR",
         "BRASILEIRA"
     ],
 
+    // MARANHÃO
     MA: [
         "SAO LUIS",
         "IMPERATRIZ",
@@ -545,6 +581,7 @@ const REGIOES_LOGISTICAS = {
         "BACABEIRA"
     ],
 
+    // DISTRITO FEDERAL
     DF: [
         "BRASILIA",
         "CEILANDIA",
@@ -552,11 +589,11 @@ const REGIOES_LOGISTICAS = {
         "PLANALTINA",
         "SAMAMBAIA",
         "GAMA",
-        "GUARÁ",
-        "SOBRADINHO",
-        "CRISTALINA"
+        "GUARA",
+        "SOBRADINHO"
     ],
 
+    // SERGIPE
     SE: [
         "ARACAJU"
     ]
