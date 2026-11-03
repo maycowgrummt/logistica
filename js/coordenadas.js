@@ -20,6 +20,7 @@ const COORDENADAS_CIDADES = {
     "PINHAIS": {lat:-25.4442,lng:-49.1927},
     "COLOMBO": {lat:-25.2925,lng:-49.2242},
     "CAMPO LARGO": {lat:-25.4597,lng:-49.5285},
+    "CAMPO MAGRO": {lat:-25.3860,lng:-49.3450},
     "SAO JOSE DOS PINHAIS": {lat:-25.5313,lng:-49.2031},
     "FAZENDA RIO GRANDE": {lat:-25.6623,lng:-49.3078},
     "PIRAQUARA": {lat:-25.4428,lng:-49.0635},

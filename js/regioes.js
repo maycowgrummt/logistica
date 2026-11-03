@@ -43,7 +43,8 @@ const REGIOES_LOGISTICAS = {
         "BOCAIUVA DO SUL",
         "CONTENDA",
         "LAPA",
-        "TIJUCAS DO SUL"
+        "TIJUCAS DO SUL",
+        "CAMPINA GRANDE DO SUL",
     ],
 
     LITORAL_PR: [
@@ -52,7 +53,7 @@ const REGIOES_LOGISTICAS = {
         "MATINHOS",
         "PONTAL DO PARANA",
         "MORRETES",
-        "ANTONINA"
+        "ANTONINA",
     ],
 
     CAMPOS_GERAIS: [
