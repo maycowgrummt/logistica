@@ -341,9 +341,25 @@ function renderizarSequenciaRota(regiao, cidadesDisponiveis = []) {
                 Nenhuma cidade adicionada à sequência.
             </p>
         `;
+                const cidadesResumoHtml = Array.from(cidadesUnicas.values())
+                    .sort((a, b) => a.localeCompare(b, 'pt-BR'))
+                    .map(cidade => `
+                        <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100 text-xs font-semibold">
+                            📍 ${escaparHtmlSequencia(cidade)}
+                        </span>
+                    `)
+                    .join('');
+        return `
+                    <div class="flex flex-col sm:flex-row gap-2 mb-4">
+                    <div class="mb-4">
+                <div class="font-bold text-slate-700 dark:text-slate-200 mb-2">
+                    🏙️ Cidades da Rota (${cidadesUnicas.size})
+                </div>
 
-    return `
-        <div class="flex flex-col sm:flex-row gap-2 mb-4">
+                <div class="flex flex-wrap gap-2">
+                    ${cidadesResumoHtml}
+                </div>
+            </div>
             <select
                 id="sequenciaCidadeSelect"
                 data-regiao="${escaparHtmlSequencia(regiao)}"
@@ -1405,6 +1421,14 @@ function abrirRota(regiao) {
                 p.regiao === regiao
         )
         : [];
+
+        const cidadesUnicas = [
+            ...new Set(
+            pedidosRegiao
+            .map(p => p.cidade)
+            .filter(Boolean)
+            )
+        ].sort();
 
     const totalPedidos = pedidosRegiao.length;
     const clientesSet = new Set(pedidosRegiao.map(p => p.cliente).filter(Boolean));
