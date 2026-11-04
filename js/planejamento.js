@@ -981,6 +981,11 @@ function gerarResumoRegioes() {
 
     regioesArray.sort((a, b) => a.timestampPrioridade - b.timestampPrioridade);
 
+                atualizarTorreControleItinerante(
+                resumo,
+                regioesArray
+            );
+
     painel.innerHTML = regioesArray
         .map((item, index) => {
             const numeroRota = String(index + 1).padStart(3, '0');
@@ -1031,6 +1036,136 @@ function gerarResumoRegioes() {
                 </div>
             `;
         }).join('') + '<div id="containerPainelOperacionalRota" class="col-span-full"></div>';
+            }
+
+            function atualizarTorreControleItinerante(resumo, regioesArray) {
+
+    const painel = document.getElementById(
+        'torreControleItinerante'
+    );
+
+    if (!painel) {
+        return;
+    }
+
+    const pedidosItinerantes =
+        (dadosApp?.pedidos || [])
+            .filter(
+                p => p && p.tipoCarga === 'itinerante'
+            );
+
+    const totalPedidos =
+        pedidosItinerantes.length;
+
+    const totalClientes =
+        new Set(
+            pedidosItinerantes
+                .map(p => p.cliente)
+                .filter(Boolean)
+        ).size;
+
+    const totalPeso =
+        pedidosItinerantes.reduce(
+            (acc, p) =>
+                acc + Number(p.peso || 0),
+            0
+        );
+
+   const totalVolume =
+    pedidosItinerantes.reduce(
+        (acc, p) => {
+
+            const volume =
+                Number(p.volumeTotal || 0);
+
+            if (volume > 1000) {
+                return acc;
+            }
+
+            return acc + volume;
+
+        },
+        0
+    );
+
+    const totalRotas =
+        regioesArray.length;
+
+    const rotasPlanejadas =
+        regioesArray.filter(
+            r => r.planejada
+        ).length;
+
+    const rotasPendentes =
+        totalRotas - rotasPlanejadas;
+
+    painel.innerHTML = `
+        <div class="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4">
+            <div class="text-xs font-semibold text-blue-600">
+                📦 PEDIDOS
+            </div>
+            <div class="text-2xl font-bold">
+                ${totalPedidos}
+            </div>
+        </div>
+
+        <div class="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800 rounded-xl p-4">
+            <div class="text-xs font-semibold text-emerald-600">
+                👥 CLIENTES
+            </div>
+            <div class="text-2xl font-bold">
+                ${totalClientes}
+            </div>
+        </div>
+
+        <div class="bg-indigo-50 dark:bg-indigo-950/20 border border-indigo-200 dark:border-indigo-800 rounded-xl p-4">
+            <div class="text-xs font-semibold text-indigo-600">
+                🚛 ROTAS
+            </div>
+            <div class="text-2xl font-bold">
+                ${totalRotas}
+            </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
+            <div class="text-xs font-semibold text-green-600">
+                ✅ PLANEJADAS
+            </div>
+            <div class="text-2xl font-bold">
+                ${rotasPlanejadas}
+            </div>
+        </div>
+
+        <div class="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4">
+            <div class="text-xs font-semibold text-amber-600">
+                🟡 PENDENTES
+            </div>
+            <div class="text-2xl font-bold">
+                ${rotasPendentes}
+            </div>
+        </div>
+
+        <div class="bg-purple-50 dark:bg-purple-950/20 border border-purple-200 dark:border-purple-800 rounded-xl p-4">
+            <div class="text-xs font-semibold text-purple-600">
+                ⚖️ PESO
+            </div>
+            <div class="text-lg font-bold">
+                ${Math.round(totalPeso).toLocaleString('pt-BR')} kg
+            </div>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-950/20 border border-slate-200 dark:border-slate-800 rounded-xl p-4">
+            <div class="text-xs font-semibold text-slate-600">
+                📦 VOLUME
+            </div>
+            <div class="text-lg font-bold">
+                ${totalVolume.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            })} m³
+            </div>
+        </div>
+    `;
 }
 
 /* =========================================================
