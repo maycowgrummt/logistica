@@ -909,6 +909,7 @@ function gerarResumoRegioes() {
                     resumo[regiao] = {
                         pedidos: 0,
                         clientes: new Set(),
+                        cidades: new Set(),
                         peso: 0,
                         datas: []
                     };
@@ -918,6 +919,10 @@ function gerarResumoRegioes() {
 
                 if (pedido.cliente) {
                     resumo[regiao].clientes.add(pedido.cliente);
+                }
+
+                if (pedido.cidade) {
+                   resumo[regiao].cidades.add(pedido.cidade);
                 }
 
                 resumo[regiao].peso += Number(pedido.peso || 0);
@@ -971,6 +976,7 @@ function gerarResumoRegioes() {
             regiao,
             pedidos: dados.pedidos,
             clientes: dados.clientes.size,
+            cidades: dados.cidades.size,
             peso: dados.peso,
             dataPrioridade: menorData,
             timestampPrioridade: menorTimestamp,
@@ -1028,6 +1034,8 @@ function gerarResumoRegioes() {
                         Pedidos: ${item.pedidos}
                         <br>
                         Clientes: ${item.clientes}
+                        <br>
+                        Cidades: ${item.cidades}
                         <br>
                         Peso: ${Math.round(item.peso).toLocaleString('pt-BR')} Kg
                         <br>
