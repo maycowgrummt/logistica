@@ -487,13 +487,34 @@
                     </div>
                     </div>
 
-            <!-- Tabela -->
-            <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800 overflow-hidden">
-                <div class="p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex justify-between items-center">
-                    <h3 id="tituloTabelaPedidos" class="font-bold text-slate-700 dark:text-slate-200">Cargas Consolidadas</h3>
-                    <button onclick="pedirSenhaParaLimparTudo()" class="text-xs text-blue-600 hover:underline px-3 py-1.5 bg-blue-50 dark:bg-blue-950/50 rounded-lg border border-blue-200 dark:border-blue-800 font-bold">Excluir Cargas (Admin)</button>
-                </div>
-                <div class="overflow-x-auto">
+                            <!-- Tabela -->
+                            <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800 overflow-hidden">
+                            <div class="p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex justify-between items-center">
+
+                    <h3 id="tituloTabelaPedidos"
+                        class="font-bold text-slate-700 dark:text-slate-200">
+                        Cargas Consolidadas
+                    </h3>
+
+                    <div class="flex items-center gap-2">
+
+                        <button
+                            id="btnToggleTabela"
+                            onclick="toggleTabelaPedidos()"
+                            class="text-xs text-emerald-600 hover:underline px-3 py-1.5 bg-emerald-50 dark:bg-emerald-950/50 rounded-lg border border-emerald-200 dark:border-emerald-800 font-bold">
+                            ▶ Mostrar Detalhes
+                        </button>
+
+                        <button
+                            onclick="pedirSenhaParaLimparTudo()"
+                            class="text-xs text-blue-600 hover:underline px-3 py-1.5 bg-blue-50 dark:bg-blue-950/50 rounded-lg border border-blue-200 dark:border-blue-800 font-bold">
+                            Excluir Cargas (Admin)
+                        </button>
+
+                    </div>
+
+                </div>   
+                <div id="containerTabelaPedidos" class="overflow-x-auto hidden">
                     <table class="w-full text-left border-collapse text-sm">
                         <thead>
                             <tr id="tabelaCabecalhoTr" class="bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 uppercase text-xs"></tr>

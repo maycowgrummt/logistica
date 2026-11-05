@@ -84,6 +84,26 @@ Responsável por:
             lucide.createIcons();
         }
 
+                function toggleTabelaPedidos() {
+
+            const container = document.getElementById('containerTabelaPedidos');
+            const botao = document.getElementById('btnToggleTabela');
+
+            if (!container || !botao) return;
+
+            if (container.classList.contains('hidden')) {
+
+                container.classList.remove('hidden');
+                botao.textContent = '▼ Ocultar Detalhes';
+
+            } else {
+
+                container.classList.add('hidden');
+                botao.textContent = '▶ Mostrar Detalhes';
+
+            }
+        }
+
                 function renderizarTabelasAgendamentos() {
             const tbody = document.getElementById('tabelaAgendamentosBody');
             if(!tbody) return;
